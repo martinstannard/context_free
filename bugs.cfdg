@@ -1,0 +1,89 @@
+startshape GRID
+
+rule GRID {
+	10 * { y 3 } FLOWCOL{}
+}
+
+rule FLOWCOL {
+	10 * {x 3 } CIRCLE { s 3}
+
+	10 * {x 3 } CENTRE {z 1}
+	10 * {x 3 h 36} PETALS  {h -21}
+}
+
+rule FLOWER {
+	PETALS{ }
+	CENTRE { z 1  } 
+}
+
+rule CENTRE {
+	CIRCLE{ s 0.8  hue 50 sat 1 b 0}
+	CIRCLE{ s 0.7  hue 50 sat 1 b 1}
+}
+
+rule PETALS {
+	12 * {r 30} PETAL {  }
+}
+
+rule PETALS {
+	15 * {r 24} PETAL {  }
+}
+
+rule PETALS {
+	18* {r 20} PETAL {  }
+	18* {r 20} CIRCLE { h 50 sat 1 b 0 x 1 s 0.25 } 
+}
+
+rule PETALS {
+	20* {r 18} PETAL {  }
+	20* {r 18} CIRCLE { h 50 sat 1 b 0 x 1 s 0.25 } 
+}
+
+rule PETALS {
+	24* {r 15} PETAL {  }
+}
+
+rule PETALS {
+	PETALS12 {}
+}
+
+rule PETALS {
+	PETALS15 {}
+}
+
+rule PETALS {
+	PETALS18 {}
+}
+
+rule PETALS {
+	PETALS20 {}
+}
+
+rule PETALS12 {
+	12*{ r 30} PETALLISPE {}
+}
+
+rule PETALS15 {
+	15*{ r 24} PETALLISPE {}
+}
+
+rule PETALS18 {
+	18*{ r 20} PETALLISPE {}
+}
+
+
+rule PETALS20 {
+	20*{ r 18} PETALLISPE {}
+}
+
+
+rule PETALLISPE {
+	CIRCLE [ sat 1 b 1 r 30 x 0.5 s 1 0.25 s 1.5]
+	PETALLISPE { h 20 s 0.7 }
+}
+
+rule PETAL {
+	CIRCLE {  sat 1 b 1 x 1.0 s 0.3 }
+	PETAL { s 0.95 h 2} 
+}
+
