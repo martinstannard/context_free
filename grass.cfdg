@@ -1,0 +1,50 @@
+startshape start
+
+rule start
+{
+	sky  {} 
+	world{h 120  sat 1 b 0 r 90 }
+	world{h 100  sat 1 b 0 r 90 }
+	world{h 80  sat 1 b 0 r 90 }
+}
+
+rule sky {
+	SQUARE {x  -100 y 100 h  210 sat 0.7  b 0.3 s 200 z -1}
+	CIRCLE { x -100 y 150 h 40 sat 0.9 b 0.7 s 30 }
+	cloud {}
+}
+
+rule world
+{
+	200*{y 1 } blade{ sat 0.2 b 0.5}
+}
+
+rule blade 25
+{
+	SQUARE{}
+	blade{x 0.95  r -2 s 0.98 }
+}
+
+rule blade 18
+{
+	SQUARE{}
+	blade{x 0.90 r 1 s 0.97  b 0.1 }
+}
+
+rule blade 16
+{
+	SQUARE{}
+	blade{x 0.90 r 2 s 0.93  b 0.1 }
+}
+
+rule blade
+{
+	SQUARE{}
+}
+
+rule cloud
+{
+	CIRCLE {  x -100 y 140 h 0 sat 0 b 1 s 15 alpha -0.5}
+	cloud { s 0.9 }
+}
+
